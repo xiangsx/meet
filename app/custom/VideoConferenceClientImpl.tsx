@@ -64,12 +64,13 @@ export function VideoConferenceClientImpl(props: {
       connectOptions={connectOptions}
       serverUrl={props.liveKitUrl}
       audio={true}
-      video={true}
+      video={false}
+      screen={false}
     >
       <VideoConference
         chatMessageFormatter={formatChatMessageLinks}
         SettingsComponent={
-          process.env.NEXT_PUBLIC_SHOW_SETTINGS_MENU === 'true' ? SettingsMenu : undefined
+          undefined
         }
       />
       <DebugMode logLevel={LogLevel.debug} />
